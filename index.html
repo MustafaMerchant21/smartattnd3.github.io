@@ -19,7 +19,8 @@
         gap: 10px;
       }
       .cont {
-        margin-top: 2em;
+        position: relative;
+        margin: .5em;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -36,8 +37,13 @@
         width: 100%;
       }
       #map {
-        height: 500px;
+        height: 80vh;
         width: 100%;
+      }
+      h1{
+        position: absolute;
+        top: 35%;
+        align-self: center;
       }
       .slide-in-left{
         -webkit-animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;
@@ -76,8 +82,9 @@
   </head>
   <body class="bg-dark text-light">
     <div class="cont">
-      <h1>Geolocation Check</h1>
-      <p>Checking if you are within your coordinates...</p>
+      <h1>Click Access location to start!</h1>
+      <!-- <p>Checking if you are within your coordinates...</p> -->
+      <div id="map"></div>
       <button id="access" class="btn btn-outline-success w-50">
         <b>Access Location</b>
       </button>
@@ -97,11 +104,10 @@
         <button id="clg" class="btn btn-outline-info">GGSP College</button>
       </div>
       <button id="refresh" class="btn btn-dark btn-outline-secondary refreshButton"><img width="30px" src="reload.png" alt="reload"></button>
-      <h3>Your current location:</h3>
-      <p id="latitude">Latitude:</p>
-      <p id="longitude">Longitude:</p>
+      <!-- <h3>Your current location:</h3> -->
+      <span id="latitude">Latitude:</span>
+      <span id="longitude">Longitude:</span>
       <p id="google-maps-link"></p>
-      <div id="map"></div>
     </div>
     <div class="alert alert-success slide-in-left " id="locationAlert" role="alert">
       Location Accessed Successfully
@@ -130,6 +136,7 @@
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+    <script src="windingNumber.js"></script>
   </body>
 </html>
